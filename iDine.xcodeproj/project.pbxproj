@@ -15,6 +15,7 @@
 		E16C4E1E25FEEB6600A6046E /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C4E1B25FEEB6600A6046E /* Menu.swift */; };
 		E16C4E1F25FEEB6600A6046E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C4E1C25FEEB6600A6046E /* Order.swift */; };
 		E16C4E2225FEEC0E00A6046E /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = E16C4E2125FEEC0E00A6046E /* menu.json */; };
+		E16C4E2525FFF99200A6046E /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C4E2425FFF99200A6046E /* ItemRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E16C4E1B25FEEB6600A6046E /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		E16C4E1C25FEEB6600A6046E /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E16C4E2125FEEC0E00A6046E /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		E16C4E2425FFF99200A6046E /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				E16C4E0A25FEEB2200A6046E /* iDineApp.swift */,
 				E16C4E0C25FEEB2200A6046E /* ContentView.swift */,
+				E16C4E2425FFF99200A6046E /* ItemRow.swift */,
 				E16C4E0E25FEEB2900A6046E /* Assets.xcassets */,
 				E16C4E1A25FEEB6600A6046E /* Helper.swift */,
 				E16C4E1B25FEEB6600A6046E /* Menu.swift */,
@@ -154,6 +157,7 @@
 				E16C4E0D25FEEB2200A6046E /* ContentView.swift in Sources */,
 				E16C4E0B25FEEB2200A6046E /* iDineApp.swift in Sources */,
 				E16C4E1F25FEEB6600A6046E /* Order.swift in Sources */,
+				E16C4E2525FFF99200A6046E /* ItemRow.swift in Sources */,
 				E16C4E1E25FEEB6600A6046E /* Menu.swift in Sources */,
 				E16C4E1D25FEEB6600A6046E /* Helper.swift in Sources */,
 			);
