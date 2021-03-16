@@ -19,7 +19,6 @@ struct ItemRow: View
             {
                 Text(item.name)
                 Text("$\(item.price)")
-    
             }
         }
     }
