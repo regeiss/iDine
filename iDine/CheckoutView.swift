@@ -11,11 +11,27 @@ struct CheckoutView: View
 {
     @EnvironmentObject var order: Order
     @State private var paymentType: String = "Cash"
-    let paymentTypes = ["Cash","Credit Card","Points"]
+    @State private var loyaltyNumber: String = ""
+    @State private var addLoyaltyDetails: Bool = false
+    @State private var tipAmount: Int = 15
+    @State private var showingPaymentAlert: Bool = false
+    
+    let paymentTypes:[String] = ["Cash","Credit Card","Points"]
+    let tipAmounts: [Int] = [5, 10, 20, 25, 0]
+    var totalPrice: String
+    {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        let total = Double(order.total)
+        let tipValue = total / 100 * Double(tipAmount)
+        
+        return formatter.string(from: NSNumber(value: total + tipValue)) ?? "$0"
+    }
     
     var body: some View
     {
-        VStack
+        Form
         {
             Section
             {
@@ -26,9 +42,39 @@ struct CheckoutView: View
                         Text($0)
                     }
                 }
+                
+                Toggle("Add loyalty details", isOn: $addLoyaltyDetails.animation())
+                if addLoyaltyDetails
+                {
+                    TextField("Add your loyalty number", text: $loyaltyNumber)
+                }
             }
-        }.navigationTitle("")
+            Section(header: Text("Add a tip?"))
+            {
+                Picker("Percentage:", selection: $tipAmount)
+                {
+                    ForEach(tipAmounts, id: \.self)
+                    {
+                        Text("\($0)%")
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            Section(header: Text("TOTAL: \(totalPrice)"))
+            {
+                Button("Confirm order")
+                {
+                    showingPaymentAlert.toggle()
+                }
+            }
+            
+        }
+        .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
+        .alert(isPresented: $showingPaymentAlert)
+        {
+            Alert(title: Text("Order confirmed"), message: Text("Your total was \(totalPrice)"), dismissButton: .default(Text("OK")))
+        }
     }
 }
 
